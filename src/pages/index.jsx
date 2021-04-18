@@ -1,24 +1,19 @@
-import { Header } from "src/components/header";
-import { Footer } from "src/components/footer";
-import Head from "next/head";
+import { Card } from "src/components/card";
+import { MainLayout } from "src/layouts/main";
+import { BlogLayout } from "src/layouts/blog";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Cat's Soliloquy</title>
-      </Head>
-
-      <Header />
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <div className="m-20">cat</div>
-      <Footer />
+      <MainLayout>
+        <BlogLayout>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </BlogLayout>
+      </MainLayout>
     </>
   );
 }

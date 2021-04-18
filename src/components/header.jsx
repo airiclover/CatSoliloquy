@@ -54,14 +54,14 @@ export function Header() {
               )}
             </Menu.Button>
 
-            <Menu.Items className="w-3/6 h-screen py-4 z-10 text-center  fixed top-14 right-0  focus:outline-none lg:hidden">
+            <Menu.Items className="bg-gray-50 w-3/6 h-screen py-4 z-10 text-center  fixed top-14 right-0  focus:outline-none lg:hidden">
               {LINKS.map((link) => (
                 <Menu.Item key={link.title}>
                   {/* <Link href={link.href}> */}
                   <Link href="/">
                     <a>
                       <ul>
-                        <li>{link.title}</li>
+                        <li className="py-3">{link.title}</li>
                       </ul>
                     </a>
                   </Link>
