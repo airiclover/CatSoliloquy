@@ -1,6 +1,6 @@
+import { Header } from "src/components/header";
+import { Footer } from "src/components/footer";
 import Head from "next/head";
-import { Header } from "../components/header";
-import { Footer } from "../components/header";
 
 export default function Home() {
   return (
