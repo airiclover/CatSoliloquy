@@ -18,7 +18,7 @@ export default function Home() {
       <div className="m-20">cat</div>
       <div className="m-20">cat</div>
       <div className="m-20">cat</div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
