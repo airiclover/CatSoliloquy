@@ -3,9 +3,13 @@ import Link from "next/link";
 import { Menu } from "@headlessui/react";
 
 const LINKS = [
-  { href: "top", title: "top" },
-  { href: "blog", title: "blog" },
-  { href: "sns", title: "sns" },
+  { href: "top", src: "home.svg", title: "top" },
+  { href: "blog", src: "pencil.svg", title: "blog" },
+];
+
+const SNSES = [
+  { href: "https://twitter.com/cloverlovexxx", src: "twitter.svg" },
+  { href: "https://github.com/airiclover", src: "github.svg" },
 ];
 
 export function Header() {
@@ -55,19 +59,47 @@ export function Header() {
                     priority
                   />
                 </Menu.Button>
-                <Menu.Items className="mt-14 text-center   focus:outline-none">
+                <Menu.Items className="my-20 ml-10 mr-5 focus:outline-none">
                   {LINKS.map((link) => (
                     <Menu.Item key={link.title}>
                       {/* <Link href={link.href}> */}
                       <Link href="/">
                         <a>
                           <ul>
-                            <li className="py-3">{link.title}</li>
+                            <li className="py-2 my-2">
+                              <img
+                                src={`/img/${link.src}`}
+                                alt={link.src}
+                                className="w-7 h-7 inline-block pr-2"
+                              />
+                              {link.title}
+                            </li>
                           </ul>
                         </a>
                       </Link>
                     </Menu.Item>
                   ))}
+
+                  <div className="my-6">
+                    {SNSES.map((sns) => (
+                      <a
+                        href="/"
+                        key={sns.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3"
+                      >
+                        <Image
+                          src={`/img/${sns.src}`}
+                          alt={sns.src}
+                          width={28}
+                          height={28}
+                          loading="eager"
+                          priority
+                        />
+                      </a>
+                    ))}
+                  </div>
                 </Menu.Items>
               </div>
             )}

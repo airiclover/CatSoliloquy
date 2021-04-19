@@ -1,3 +1,3 @@
 export function BlogLayout({ children }) {
-  return <div className="grid grid-cols-2 gap-4">{children}</div>;
+  return <div className="grid grid-cols-2 gap-y-5 gap-x-4">{children}</div>;
 }
