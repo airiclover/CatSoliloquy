@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Menu } from "@headlessui/react";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
 
 const LINKS = [
   { href: "top", src: "home.svg", title: "top" },
   { href: "blog", src: "pencil.svg", title: "blog" },
+];
+
+const CATEGORIES = [
+  { href: "programming", title: "programming" },
+  { href: "travel", title: "travel" },
+  { href: "nomal", title: "diary" },
 ];
 
 const SNSES = [
@@ -13,9 +20,11 @@ const SNSES = [
 ];
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="h-16 px-3 flex justify-between items-center font-mono font-black">
-      <div>
+    <>
+      <div className="h-16 px-3 flex justify-between items-center font-mono font-black">
         <Link href="/">
           <a className="flex">
             <div className="p-3 flex items-center">
@@ -31,81 +40,89 @@ export function Header() {
             </div>
           </a>
         </Link>
+
+        <button
+          onClick={() => setIsOpen(true)}
+          className="pt-4 pb-2 pl-3 pr-6 cursor-pointer fixed right-0 focus:outline-none"
+        >
+          <Image
+            src="/img/menu.svg"
+            alt="menuIcon"
+            width={24}
+            height={24}
+            loading="eager"
+            priority
+          />
+        </button>
       </div>
 
-      <Menu>
-        {({ open }) => (
-          <>
-            <Menu.Button className="pt-4 pb-2 pl-3 pr-6 cursor-pointer fixed right-0 focus:outline-none">
-              <Image
-                src="/img/menu.svg"
-                alt="menuIcon"
-                width={24}
-                height={24}
-                loading="eager"
-                priority
-              />
-            </Menu.Button>
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className="font-mono font-black"
+      >
+        <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+        <div className="fixed top-0 right-0 bg-white w-3/5 h-screen ">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="pt-2 pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none"
+          >
+            <Image
+              src="/img/cross.svg"
+              alt="menuIcon"
+              width={24}
+              height={24}
+              loading="eager"
+              priority
+            />
+          </button>
 
-            {open && (
-              <div className="fixed top-0 right-0 bg-white w-3/5 h-screen z-10">
-                <Menu.Button className="pt-2 pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none">
+          <div className="my-20 ml-10 mr-5 focus:outline-none">
+            {LINKS.map((link) => (
+              <div key={link.title}>
+                {/* <Link href={link.href}> */}
+                <Link href="/">
+                  <a className="flex items-center py-2 my-2">
+                    <img
+                      src={`/img/${link.src}`}
+                      alt={link.src}
+                      className="w-7 h-7 inline-block pr-2"
+                    />
+                    {link.title}
+                  </a>
+                </Link>
+              </div>
+            ))}
+
+            {CATEGORIES.map((category) => (
+              <Link href="/" key={category.href}>
+                <a className="ml-6 text-xs block py-1 my-1">{category.title}</a>
+              </Link>
+            ))}
+
+            <div className="mt-10">
+              {SNSES.map((sns) => (
+                <a
+                  href={sns.href}
+                  key={sns.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3"
+                >
                   <Image
-                    src="/img/cross.svg"
-                    alt="menuIcon"
-                    width={24}
-                    height={24}
+                    src={`/img/${sns.src}`}
+                    alt={sns.src}
+                    width={28}
+                    height={28}
                     loading="eager"
                     priority
                   />
-                </Menu.Button>
-                <Menu.Items className="my-20 ml-10 mr-5 focus:outline-none">
-                  {LINKS.map((link) => (
-                    <Menu.Item key={link.title}>
-                      {/* <Link href={link.href}> */}
-                      <Link href="/">
-                        <a>
-                          <ul>
-                            <li className="py-2 my-2">
-                              <img
-                                src={`/img/${link.src}`}
-                                alt={link.src}
-                                className="w-7 h-7 inline-block pr-2"
-                              />
-                              {link.title}
-                            </li>
-                          </ul>
-                        </a>
-                      </Link>
-                    </Menu.Item>
-                  ))}
-
-                  <div className="my-6">
-                    {SNSES.map((sns) => (
-                      <a
-                        href="/"
-                        key={sns.src}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3"
-                      >
-                        <Image
-                          src={`/img/${sns.src}`}
-                          alt={sns.src}
-                          width={28}
-                          height={28}
-                          loading="eager"
-                          priority
-                        />
-                      </a>
-                    ))}
-                  </div>
-                </Menu.Items>
-              </div>
-            )}
-          </>
-        )}
-      </Menu>
-    </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Dialog>
+    </>
   );
 }
