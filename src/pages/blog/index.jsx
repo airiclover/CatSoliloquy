@@ -1,9 +1,10 @@
-import Link from "next/link";
+import { Card } from "src/components/card";
+import { BlogLayout } from "src/layouts/blog";
+import { MainLayout } from "src/layouts/main";
 
 export async function getStaticProps() {
   const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/blog`);
   const data = await res.json();
-  console.log(data);
 
   return {
     props: {
@@ -14,19 +15,14 @@ export async function getStaticProps() {
 }
 
 export default function Blog(props) {
-  console.log(props);
-  // const { lists } = props;
-
   return (
-    <div>
-      {/* {console.log(props.data)} */}
-      {/* <Link href={}></Link> */}
-      <div>blog</div>
-      {props.data.list[0].ymd}
-      <br />
-      {props.data.list[0].subject}
-      <br />
-      {props.data.list[0].contents}
-    </div>
+    <>
+      <MainLayout>
+        <BlogLayout>
+          <Card data={props.data} />
+          <Card data={props.data} />
+        </BlogLayout>
+      </MainLayout>
+    </>
   );
 }
