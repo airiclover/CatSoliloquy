@@ -10,7 +10,7 @@ export async function getStaticProps() {
     props: {
       data,
     },
-    revalidate: 60 * 60,
+    revalidate: 60,
   };
 }
 
@@ -19,7 +19,6 @@ export default function Blog(props) {
     <>
       <MainLayout>
         <BlogLayout>
-          <Card data={props.data} />
           <Card data={props.data} />
         </BlogLayout>
       </MainLayout>
