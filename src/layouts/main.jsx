@@ -11,7 +11,7 @@ export function MainLayout({ children }) {
       </Head>
 
       <Header />
-      <main className="mx-6 min-h-full">{children}</main>
+      <main className="mx-6 min-h-full text-gray-900">{children}</main>
       <Footer />
     </>
   );

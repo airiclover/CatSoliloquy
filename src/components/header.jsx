@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <>
-      <div className="h-16 px-3 flex justify-between items-center font-mono font-black">
+      <div className="bg-white w-full fixed h-14 px-3 flex justify-between items-center  text-gray-900 font-mono font-black">
         <Link href="/">
           <a className="flex">
             <div className="p-3 flex items-center">
@@ -43,7 +43,7 @@ export function Header() {
 
         <button
           onClick={() => setIsOpen(true)}
-          className="pt-4 pb-2 pl-3 pr-6 cursor-pointer fixed right-0 focus:outline-none"
+          className="pt-4 pb-3 pl-5 pr-3 cursor-pointer focus:outline-none"
         >
           <Image
             src="/img/menu.svg"
@@ -59,7 +59,7 @@ export function Header() {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="font-mono font-black"
+        className="text-gray-900 font-mono font-black"
       >
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
         <div className="fixed top-0 right-0 bg-white w-3/5 h-screen ">
@@ -96,7 +96,9 @@ export function Header() {
 
             {CATEGORIES.map((category) => (
               <Link href="/" key={category.href}>
-                <a className="ml-6 text-xs block py-1 my-1">{category.title}</a>
+                <a className="ml-6 text-xs text-gray-600 block py-1 my-1">
+                  {category.title}
+                </a>
               </Link>
             ))}
 
