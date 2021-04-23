@@ -4,51 +4,49 @@ export async function getStaticPaths() {
   const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/blog`);
   const data = await res.json();
   const lists = data.list;
-  console.log(lists);
 
   const paths = lists.map((list) => {
     return {
       params: {
-        id: list.topics_id,
+        slug: list.slug,
       },
     };
   });
-  console.log(paths);
 
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: "blocking", //blockingを設定するとデータ未取得時は、SSRのような挙動をする。(データ取得後にHTMLが構築されるイメージ)
   };
 }
 
 export async function getStaticProps({ params }) {
-  const id = params.id;
+  const slug = params.slug;
 
-  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/blog/${id}`);
+  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/blog/${slug}`);
   const data = await res.json();
-  console.log(data);
 
   return {
     props: {
       data,
     },
-    revalidate: 60 * 60,
+    revalidate: 60,
   };
 }
 
 export default function BlogDetail(props) {
   const data = props.data.details;
-  console.log(data);
 
   return (
     <MainLayout>
-      <div className="p-20">
-        {data.subject}
-        <br />
-        {data.ymd}
-        <br />
-        {data.contents}
-      </div>
+      <main>
+        <h1>{data.subject}</h1>
+        <p>{data.ymd}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${data.contents}`,
+          }}
+        />
+      </main>
     </MainLayout>
   );
 }
