@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-white w-full fixed h-14 px-3 flex justify-between items-center font-mono font-black">
+      <div className="bg-white w-full fixed h-14 px-3 flex justify-between items-center font-mono font-black z-10">
         <Link href="/">
           <a className="flex">
             <div className="p-3 flex items-center">
@@ -62,7 +62,7 @@ export function Header() {
         className="text-gray-800 font-mono font-black"
       >
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-        <div className="fixed top-0 right-0 bg-white w-3/5 h-screen ">
+        <div className="fixed top-0 right-0 bg-white w-3/5 h-screen z-20">
           <button
             onClick={() => setIsOpen(false)}
             className="pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none"

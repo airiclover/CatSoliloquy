@@ -1,3 +1,4 @@
+import { Blog } from "src/components/blog";
 import { MainLayout } from "src/layouts/main";
 
 export async function getStaticPaths() {
@@ -36,23 +37,11 @@ export async function getStaticProps({ params }) {
 
 export default function BlogDetail(props) {
   const data = props.data.details;
+  // console.log(data);
 
   return (
     <MainLayout>
-      {data ? (
-        <main>
-          <h1>{data.subject}</h1>
-          <p>{data.ymd}</p>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${data.contents}`,
-            }}
-          />
-          <div>aruyo</div>
-        </main>
-      ) : (
-        <div>404</div>
-      )}
+      {data ? <Blog data={data} /> : <div>404だよ！！！</div>}
     </MainLayout>
   );
 }

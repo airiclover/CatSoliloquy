@@ -20,7 +20,7 @@ export function Profile() {
       />
 
       <div className="my-2">
-        <div className="text-3xl font-extrabold tracking-wider ">airi</div>
+        <div className="text-3xl font-semibold tracking-widest ">airi</div>
         {SNSES.map((sns) => (
           <a
             href={sns.href}
