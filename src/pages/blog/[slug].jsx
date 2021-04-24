@@ -15,7 +15,8 @@ export async function getStaticPaths() {
 
   return {
     paths: [],
-    fallback: "blocking", //blockingを設定するとデータ未取得時は、SSRのような挙動をする。(データ取得後にHTMLが構築されるイメージ)
+    fallback: "blocking",
+    //blockingを設定するとデータ未取得時は、SSRのような挙動をする。(データ取得後にHTMLが構築される)
   };
 }
 
@@ -38,15 +39,20 @@ export default function BlogDetail(props) {
 
   return (
     <MainLayout>
-      <main>
-        <h1>{data.subject}</h1>
-        <p>{data.ymd}</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${data.contents}`,
-          }}
-        />
-      </main>
+      {data ? (
+        <main>
+          <h1>{data.subject}</h1>
+          <p>{data.ymd}</p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${data.contents}`,
+            }}
+          />
+          <div>aruyo</div>
+        </main>
+      ) : (
+        <div>404</div>
+      )}
     </MainLayout>
   );
 }

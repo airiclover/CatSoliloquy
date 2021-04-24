@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 
 const LINKS = [
-  { href: "top", src: "home.svg", title: "top" },
+  { href: "/", src: "home.svg", title: "top" },
   { href: "blog", src: "pencil.svg", title: "blog" },
 ];
 
@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-white w-full fixed h-14 px-3 flex justify-between items-center  text-gray-900 font-mono font-black">
+      <div className="bg-white w-full fixed h-14 px-3 flex justify-between items-center font-mono font-black">
         <Link href="/">
           <a className="flex">
             <div className="p-3 flex items-center">
@@ -43,7 +43,7 @@ export function Header() {
 
         <button
           onClick={() => setIsOpen(true)}
-          className="pt-4 pb-3 pl-5 pr-3 cursor-pointer focus:outline-none"
+          className="pt-4 pb-2 pl-5 pr-3 cursor-pointer focus:outline-none"
         >
           <Image
             src="/img/menu.svg"
@@ -59,13 +59,13 @@ export function Header() {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="text-gray-900 font-mono font-black"
+        className="text-gray-800 font-mono font-black"
       >
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
         <div className="fixed top-0 right-0 bg-white w-3/5 h-screen ">
           <button
             onClick={() => setIsOpen(false)}
-            className="pt-2 pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none"
+            className="pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none"
           >
             <Image
               src="/img/cross.svg"
@@ -80,15 +80,16 @@ export function Header() {
           <div className="my-20 ml-10 mr-5 focus:outline-none">
             {LINKS.map((link) => (
               <div key={link.title}>
-                {/* <Link href={link.href}> */}
-                <Link href="/">
+                <Link href={link.href}>
                   <a className="flex items-center py-2 my-2">
+                    {/* <button onClick={() => setIsOpen(false)}> */}
                     <img
                       src={`/img/${link.src}`}
                       alt={link.src}
                       className="w-7 h-7 inline-block pr-2"
                     />
                     {link.title}
+                    {/* </button> */}
                   </a>
                 </Link>
               </div>

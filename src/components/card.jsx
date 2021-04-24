@@ -29,7 +29,7 @@ export function Card(props) {
                 </div>
                 <h1 className="text-sm font-semibold line-clamp-3 break-words">
                   {list.subject}
-                  {console.log(list)}
+                  {/* {console.log(list)} */}
                 </h1>
               </div>
             </div>
