@@ -10,6 +10,9 @@ module.exports = {
         current: "currentColor",
         gray: colors.trueGray,
       },
+      strokeWidth: {
+        3: "3",
+      },
     },
   },
   variants: {
