@@ -9,8 +9,8 @@ export function Blog(props) {
   const updateYmd = updateYmdhi.slice(0, 10);
 
   return (
-    <div className="m-6">
-      <main>
+    <div>
+      <main className="my-3 mx-6">
         <Image
           src="/img/1s.jpg"
           alt="blogIMG"
@@ -32,7 +32,7 @@ export function Blog(props) {
             loading="eager"
             priority
           />
-          <p className="text-sm pl-1 pr-3">{data.ymd}</p>
+          <p className="text-sm pl-1 pr-3">{data.ymd.replace(/-/g, ".")}</p>
           <Image
             src="/img/refresh.svg"
             alt="blogIMG"
@@ -41,21 +41,23 @@ export function Blog(props) {
             loading="eager"
             priority
           />
-          <p className="text-sm pl-1">{updateYmd}</p>
+          <p className="text-sm pl-1">{updateYmd.replace(/-/g, ".")}</p>
         </div>
         <div className="pb-2 text-xs text-gray-500 border-b-2">
           Category:
-          <span className="pl-1 text-gray-900">{data.contents_type_nm}</span>
+          <Link href={`/categories/${data.contents_type}`}>
+            <a className="pl-1 text-gray-900">{data.contents_type_nm}</a>
+          </Link>
         </div>
 
         <div
-          className="pt-5"
+          className="py-6"
           dangerouslySetInnerHTML={{
             __html: `${data.contents}`,
           }}
         />
 
-        <div className="flex text-xs">
+        <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2">
           {data.tags.map((tag) => (
             <Link href="/" key={tag.tag_id}>
               <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded">
