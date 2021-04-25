@@ -17,12 +17,12 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <MainLayout>
         <BlogLayout>
-          <Card data={props.data} />
+          <Card pass="blog" data={props.data} />
         </BlogLayout>
         <Profile />
       </MainLayout>
