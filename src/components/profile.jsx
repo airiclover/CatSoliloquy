@@ -7,7 +7,7 @@ const SNSES = [
 
 export function Profile() {
   return (
-    <div className="py-10 px-6 bg-gray-100 text-center">
+    <div className="py-10 px-6 bg-gray-200 text-center">
       <Image
         src="/img/clover.jpeg"
         alt="blogIMG"
@@ -42,7 +42,7 @@ export function Profile() {
       </div>
 
       <p className="mx-auto w-5/6 text-sm text-left">
-        ああああああああああああああああああああああああああああああああああああああああああああああああああ。
+        あああああああああああああああああああああああああああああああああ。
         <br />
         あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ。
         <br />
