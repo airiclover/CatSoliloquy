@@ -3,17 +3,17 @@ import { BlogLayout } from "src/layouts/blog";
 import { MainLayout } from "src/layouts/main";
 
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/tag`);
+  // 👇tag verに変える！！！
+  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/category`);
   const lists = await res.json();
 
   const paths = lists.map((list) => {
     return {
       params: {
-        tag: list.category_id,
+        category: list.category_id,
       },
     };
   });
-  console.log(paths);
 
   return {
     paths: [],
@@ -23,11 +23,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const category = params.category;
-  console.log(category);
+  const tag = params.tag;
 
   const res = await fetch(
-    `${process.env.BASE_URL}/rcms-api/1/category?contents_type=${category}`
+    // 👇tag verに変える！！！
+    `${process.env.BASE_URL}/rcms-api/1/category?contents_type=${tag}`
   );
   const data = await res.json();
 
