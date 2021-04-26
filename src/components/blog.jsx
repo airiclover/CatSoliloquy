@@ -10,7 +10,7 @@ export function Blog(props) {
 
   return (
     <div>
-      <main className="my-3 mx-6">
+      <main className="mb-3 mx-6 break-words">
         <Image
           src="/img/1s.jpg"
           alt="blogIMG"
@@ -43,10 +43,12 @@ export function Blog(props) {
           />
           <p className="text-sm pl-1">{updateYmd.replace(/-/g, ".")}</p>
         </div>
-        <div className="pb-2 text-xs text-gray-500 border-b-2">
+        <div className="pb-2 text-xs text-gray-400 border-b-2">
           Category:
           <Link href={`/categories/${data.contents_type}`}>
-            <a className="pl-1 text-gray-900">{data.contents_type_nm}</a>
+            <a className="p-1 text-gray-900 font-medium ">
+              {data.contents_type_nm}
+            </a>
           </Link>
         </div>
 

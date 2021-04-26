@@ -13,7 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Category(props) {
+export default function Categories(props) {
   const { data } = props;
   const lists = data.list;
 

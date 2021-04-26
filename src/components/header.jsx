@@ -9,9 +9,9 @@ const LINKS = [
 ];
 
 const CATEGORIES = [
-  { href: "programming", title: "programming" },
-  { href: "travel", title: "travel" },
-  { href: "nomal", title: "diary" },
+  { href: "15", title: "programming" },
+  { href: "17", title: "travel" },
+  { href: "18", title: "diary" },
 ];
 
 const SNSES = [
@@ -96,7 +96,7 @@ export function Header() {
             ))}
 
             {CATEGORIES.map((category) => (
-              <Link href="/" key={category.href}>
+              <Link href={`/categories/${category.href}`} key={category.href}>
                 <a className="ml-6 text-xs text-gray-600 block py-1 my-1">
                   {category.title}
                 </a>
