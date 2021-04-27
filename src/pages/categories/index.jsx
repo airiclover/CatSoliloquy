@@ -19,7 +19,6 @@ export default function Categories(props) {
 
   return (
     <>
-      {console.log(lists)}
       <MainLayout>
         <div className="p-6 flex flex-col">
           <h1 className="text-2xl">カテゴリー一覧</h1>
