@@ -10,9 +10,13 @@ export function MainLayout({ children }) {
         <title>Cat's Soliloquy</title>
       </Head>
 
-      <Header />
-      <main className="min-h-full pt-14 text-gray-900">{children}</main>
-      <Footer />
+      <div className="relative">
+        <Header />
+        <main className="min-h-screen pt-14 pb-8 text-gray-900">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

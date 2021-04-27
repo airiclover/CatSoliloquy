@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <div className="py-2 bg-gray-800 text-white w-full text-center bottom-0">
-      <div className="text-xs">Copyright © 2021 airi All Rights Reserved.</div>
+    <div className="h-8 bg-gray-800 text-white text-center text-xs leading-8 w-full bottom-0 absolute">
+      Copyright © 2021 airi All Rights Reserved.
     </div>
   );
 }
