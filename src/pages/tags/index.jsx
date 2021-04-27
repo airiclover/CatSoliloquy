@@ -4,7 +4,6 @@ import { MainLayout } from "src/layouts/main";
 export async function getStaticProps() {
   const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/tag`);
   const data = await res.json();
-  console.log(data);
 
   return {
     props: {
@@ -26,7 +25,7 @@ export default function Tags(props) {
           <ul className="py-4 pl-4">
             {lists.map((list) => (
               <li key={list.tag_id} className="m-1">
-                <Link href="/">
+                <Link href={`/tags/${list.tag_id}`}>
                   {/* <Link href={`/categories/${list.contents_type}`}> */}
 
                   <a className="py-1 px-2 bg-gray-800 text-xs text-white rounded">

@@ -61,7 +61,7 @@ export function Blog(props) {
 
         <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2">
           {data.tags.map((tag) => (
-            <Link href="/" key={tag.tag_id}>
+            <Link href={`/tags/${tag.tag_id}`} key={tag.tag_id}>
               <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded">
                 {tag.tag_nm}
               </a>

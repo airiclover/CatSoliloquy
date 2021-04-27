@@ -3,14 +3,14 @@ import { BlogLayout } from "src/layouts/blog";
 import { MainLayout } from "src/layouts/main";
 
 export async function getStaticPaths() {
-  // 👇tag verに変える！！！
-  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/category`);
-  const lists = await res.json();
+  const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/tag`);
+  const taglists = await res.json();
+  const lists = taglists.list;
 
   const paths = lists.map((list) => {
     return {
       params: {
-        category: list.category_id,
+        tag: list.tag_id,
       },
     };
   });
@@ -23,11 +23,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const tag = params.tag;
+  const tagId = params.tag;
 
   const res = await fetch(
-    // 👇tag verに変える！！！
-    `${process.env.BASE_URL}/rcms-api/1/category?contents_type=${tag}`
+    `${process.env.BASE_URL}/rcms-api/1/tagsearch?tag_id=${tagId}`
   );
   const data = await res.json();
 
@@ -40,13 +39,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Tag(props) {
-  const data = props.data[0];
-  console.log("aaa", data);
+  const data = props.data;
+  console.log(data);
 
   return (
     <MainLayout>
       <BlogLayout>
-        {/* 👇ページパスは「categories」ではなく、「blog」に飛ばす。 */}
         <Card pass="blog" data={data} />
       </BlogLayout>
     </MainLayout>
