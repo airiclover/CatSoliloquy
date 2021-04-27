@@ -20,7 +20,7 @@ export function Profile() {
       />
 
       <div className="my-2">
-        <div className="text-3xl font-semibold tracking-widest ">airi</div>
+        <div className="text-3xl font-semibold tracking-wider">airi</div>
         {SNSES.map((sns) => (
           <a
             href={sns.href}
@@ -42,11 +42,11 @@ export function Profile() {
       </div>
 
       <p className="mx-auto w-5/6 text-sm text-left">
-        あああああああああああああああああああああああああああああああああ。
+        フロントエンド学習者です。プログラミングの学習記録や趣味について気まぐれに書いていこうと思います。
         <br />
-        あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ。
+        猫が大好き。趣味は海外旅行です。
         <br />
-        あああああああああああああああああああああああああああああああ。
+        ご連絡はTwitterDMにてお願い致します。
       </p>
     </div>
   );
