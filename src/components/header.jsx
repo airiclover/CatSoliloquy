@@ -33,8 +33,6 @@ export function Header() {
                 alt="headerIcon"
                 width={20}
                 height={20}
-                loading="eager"
-                priority
               />
               <div className="pl-2 text-lg">Cat's Soliloquy</div>
             </div>
@@ -45,14 +43,7 @@ export function Header() {
           onClick={() => setIsOpen(true)}
           className="pt-4 pb-2 pl-5 pr-3 cursor-pointer focus:outline-none"
         >
-          <Image
-            src="/img/menu.svg"
-            alt="menuIcon"
-            width={24}
-            height={24}
-            loading="eager"
-            priority
-          />
+          <Image src="/img/menu.svg" alt="menuIcon" width={24} height={24} />
         </button>
       </div>
 
@@ -67,14 +58,7 @@ export function Header() {
             onClick={() => setIsOpen(false)}
             className="pl-3 pr-6 cursor-pointer fixed top-4 right-0 focus:outline-none"
           >
-            <Image
-              src="/img/cross.svg"
-              alt="menuIcon"
-              width={24}
-              height={24}
-              loading="eager"
-              priority
-            />
+            <Image src="/img/cross.svg" alt="menuIcon" width={24} height={24} />
           </button>
 
           <div className="my-20 ml-10 mr-5 focus:outline-none">
@@ -117,8 +101,6 @@ export function Header() {
                     alt={sns.src}
                     width={28}
                     height={28}
-                    loading="eager"
-                    priority
                   />
                 </a>
               ))}

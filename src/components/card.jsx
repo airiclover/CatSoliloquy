@@ -12,18 +12,12 @@ export function Card(props) {
           <a>
             <div>
               <Image
-                // src={data.ext_col_01.url}
-                src="/img/1s.jpg"
-                alt="blogIMG"
+                src={data.ext_col_01.url}
+                alt={data.slug}
                 width={300}
                 height={220}
-                // width={28}
-                // height={28}
-                loading="eager"
-                priority
                 objectFit="cover"
               />
-              {/* <img src={data.ext_col_01.url} alt="" className="w-full h-30" /> */}
               <div className="h-24 max-h-24">
                 <div className="text-xs text-gray-600 py-2 flex items-center">
                   <p>{data.ymd.replace(/-/g, ".")}</p>

@@ -17,21 +17,13 @@ export async function getStaticProps() {
 export default function Tags(props) {
   const { data } = props;
   const lists = data.list;
-  console.log(lists);
 
   return (
     <>
       <MainLayout>
         <div className="py-3 px-6">
           <div className="flex">
-            <Image
-              src="/img/tag.svg"
-              alt="tagIMG"
-              width={28}
-              height={28}
-              loading="eager"
-              priority
-            />
+            <Image src="/img/tag.svg" alt="tagIMG" width={28} height={28} />
             <h1 className="text-2xl">タグ一覧</h1>
           </div>
 

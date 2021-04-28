@@ -14,8 +14,6 @@ export function Profile() {
         width={120}
         height={120}
         objectFit="cover"
-        loading="eager"
-        priority
         className="rounded-full"
       />
 
@@ -34,15 +32,13 @@ export function Profile() {
               alt={sns.src}
               width={24}
               height={24}
-              loading="eager"
-              priority
             />
           </a>
         ))}
       </div>
 
       <p className="mx-auto w-5/6 text-sm text-left">
-        フロントエンド学習者です。プログラミングの学習記録や趣味について気まぐれに書いていこうと思います。
+        フロントエンド学習者です。プログラミングの学習記録や趣味について気まぐれに書いています。
         <br />
         猫が大好き。趣味は海外旅行です。
         <br />

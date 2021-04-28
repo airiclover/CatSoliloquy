@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export function Blog(props) {
   const data = props.data;
-  console.log(data);
 
   const updateYmdhi = data.update_ymdhi;
   const updateYmd = updateYmdhi.slice(0, 10);
@@ -12,35 +11,17 @@ export function Blog(props) {
     <div>
       <main className="mb-3 mx-6 break-words">
         <Image
-          src="/img/1s.jpg"
-          alt="blogIMG"
+          src={data.ext_col_01.url}
+          alt={data.slug}
           width={500}
           height={350}
-          loading="eager"
-          priority
           objectFit="cover"
         />
-        {/* <img src={data.ext_col_01.url} alt="" className="w-full h-18" /> */}
-
         <h1 className="text-2xl font-bold py-3 ">{data.subject}</h1>
         <div className="py-2 flex items-center">
-          <Image
-            src="/img/clock.svg"
-            alt="blogIMG"
-            width={14}
-            height={14}
-            loading="eager"
-            priority
-          />
+          <Image src="/img/clock.svg" alt="blogIMG" width={14} height={14} />
           <p className="text-sm pl-1 pr-3">{data.ymd.replace(/-/g, ".")}</p>
-          <Image
-            src="/img/refresh.svg"
-            alt="blogIMG"
-            width={14}
-            height={14}
-            loading="eager"
-            priority
-          />
+          <Image src="/img/refresh.svg" alt="blogIMG" width={14} height={14} />
           <p className="text-sm pl-1">{updateYmd.replace(/-/g, ".")}</p>
         </div>
         <div className="pb-2 text-xs text-gray-400 border-b-2">
