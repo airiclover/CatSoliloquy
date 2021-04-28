@@ -13,7 +13,6 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log(paths);
 
   return {
     paths: [],
@@ -24,7 +23,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const category = params.category;
-  console.log(category);
 
   const res = await fetch(
     `${process.env.BASE_URL}/rcms-api/1/category?contents_type=${category}`
@@ -41,7 +39,6 @@ export async function getStaticProps({ params }) {
 
 export default function Category(props) {
   const data = props.data[0];
-  console.log("aaa", data);
 
   return (
     <MainLayout>
