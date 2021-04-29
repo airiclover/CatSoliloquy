@@ -19,7 +19,6 @@ export default function Blog(props) {
     <>
       <MainLayout>
         <BlogLayout>
-          {/* <Card data={props.data} /> */}
           <Card pass="blog" data={props.data} />
         </BlogLayout>
       </MainLayout>
