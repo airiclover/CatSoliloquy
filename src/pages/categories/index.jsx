@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MainLayout } from "src/layouts/main";
 
@@ -20,20 +21,30 @@ export default function Categories(props) {
   return (
     <>
       <MainLayout>
-        <div className="p-6 flex flex-col">
-          <h1 className="text-2xl">カテゴリー一覧</h1>
-          <ul className="py-4 pl-4">
+        <div className="py-3 px-6">
+          <div className="py-3 px-2 bg-gray-200 flex rounded">
+            <Image src="/img/map.svg" alt="mapIMG" width={28} height={28} />
+            <h1 className="pl-1 text-2xl">カテゴリー</h1>
+          </div>
+
+          <ul>
             {lists.map((list) => (
               <li
                 key={list.topics_category_id}
-                className="p-2 flex items-center"
+                className="flex items-center border-b-2"
               >
                 <Link href={`/categories/${list.contents_type}`}>
-                  <a className="border-b border-black">
-                    <p>{list.category_nm}</p>
+                  <a className="w-full py-5 px-4 flex">
+                    <Image
+                      src={`/img/${list.category_nm}.svg`}
+                      alt={list.category_nm}
+                      width={16}
+                      height={16}
+                    />
+                    <p className="ml-2 mr-1">{list.category_nm}</p>
+                    <p>({list.cnt})</p>
                   </a>
                 </Link>
-                <p>({list.cnt})</p>
               </li>
             ))}
           </ul>

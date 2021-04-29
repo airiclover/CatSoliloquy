@@ -9,7 +9,7 @@ export function Blog(props) {
 
   return (
     <div>
-      <main className="mb-3 mx-6 break-words">
+      <main className="mb-4 mx-6 break-words">
         <Image
           src={data.ext_col_01.url}
           alt={data.slug}
