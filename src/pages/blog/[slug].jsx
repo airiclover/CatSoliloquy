@@ -37,7 +37,6 @@ export async function getStaticProps({ params }) {
 
 export default function BlogDetail(props) {
   const data = props.data.details;
-  // console.log(data);
 
   return (
     <MainLayout>
