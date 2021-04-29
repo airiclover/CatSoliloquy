@@ -2,7 +2,7 @@ import { Card } from "src/components/card";
 import { MainLayout } from "src/layouts/main";
 import { BlogLayout } from "src/layouts/blog";
 import { Profile } from "src/components/profile";
-import Link from "next/link";
+import { Footer } from "src/components/footer";
 
 export async function getStaticProps() {
   const res = await fetch(`${process.env.BASE_URL}/rcms-api/1/blog`);
@@ -17,7 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  // console.log(props);
   return (
     <>
       <MainLayout>
@@ -25,6 +24,7 @@ export default function Home(props) {
           <Card pass="blog" data={props.data} />
         </BlogLayout>
         <Profile />
+        <Footer />
       </MainLayout>
     </>
   );
