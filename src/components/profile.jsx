@@ -19,22 +19,24 @@ export function Profile() {
 
       <div className="my-2">
         <div className="text-3xl font-semibold tracking-wider">airi</div>
-        {SNSES.map((sns) => (
-          <a
-            href={sns.href}
-            key={sns.src}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block p-1"
-          >
-            <Image
-              src={`/img/${sns.src}`}
-              alt={sns.src}
-              width={24}
-              height={24}
-            />
-          </a>
-        ))}
+        <div>
+          {SNSES.map((sns) => (
+            <a
+              href={sns.href}
+              key={sns.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block p-1"
+            >
+              <Image
+                src={`/img/${sns.src}`}
+                alt={sns.src}
+                width={28}
+                height={28}
+              />
+            </a>
+          ))}
+        </div>
       </div>
 
       <p className="mx-auto w-5/6 text-sm text-left">

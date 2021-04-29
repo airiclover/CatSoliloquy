@@ -18,12 +18,27 @@ export function Blog(props) {
           objectFit="cover"
         />
         <h1 className="text-2xl font-bold py-3 ">{data.subject}</h1>
-        <div className="py-2 flex items-center">
-          <Image src="/img/clock.svg" alt="blogIMG" width={14} height={14} />
-          <p className="text-sm pl-1 pr-3">{data.ymd.replace(/-/g, ".")}</p>
-          <Image src="/img/refresh.svg" alt="blogIMG" width={14} height={14} />
-          <p className="text-sm pl-1">{updateYmd.replace(/-/g, ".")}</p>
+
+        <div className="py-2 flex">
+          <div className="flex items-center">
+            <Image src="/img/clock.svg" alt="blogIMG" width={14} height={14} />
+            <p className="text-sm pl-1 pr-3">{data.ymd.replace(/-/g, ".")}</p>
+          </div>
+
+          {/* 更新があった場合のみ更新日を表示 */}
+          {data.inst_ymdhi !== data.update_ymdhi ? (
+            <div className="flex items-center">
+              <Image
+                src="/img/refresh.svg"
+                alt="blogIMG"
+                width={14}
+                height={14}
+              />
+              <p className="text-sm pl-1">{updateYmd.replace(/-/g, ".")}</p>
+            </div>
+          ) : null}
         </div>
+
         <div className="pb-2 text-xs text-gray-400 border-b-2">
           Category:
           <Link href={`/categories/${data.contents_type}`}>

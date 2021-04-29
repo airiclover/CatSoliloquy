@@ -11,7 +11,7 @@ const LINKS = [
 export function FooterNav() {
   return (
     <div>
-      <div className="w-full h-14 px-6 flex items-center bg-white text-xs border-t bottom-0 fixed">
+      <div className="w-full h-14 px-6 flex items-center bg-white text-gray-900 text-xs border-t bottom-0 fixed">
         {LINKS.map((link, index) => (
           <Link href={link.href} key={index}>
             <a className="w-1/4 text-center">
