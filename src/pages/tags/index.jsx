@@ -86,7 +86,7 @@ export default function Tags(props) {
                   width={20}
                   height={20}
                 />
-                <h2 className="ml-1 text-lg">雑記</h2>
+                <h2 className="ml-1 text-lg">ダイアリー</h2>
               </div>
               <ul className="flex flex-wrap">
                 {lists.map((list) => (
