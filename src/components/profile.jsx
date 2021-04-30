@@ -18,7 +18,7 @@ export function Profile() {
       />
 
       <div className="my-2">
-        <div className="text-3xl font-semibold tracking-wider">airi</div>
+        <div className="text-3xl font-bold tracking-wider">airi</div>
         <div>
           {SNSES.map((sns) => (
             <a

@@ -23,7 +23,14 @@ export default function Tags(props) {
       <MainLayout>
         <div className="py-3 px-6">
           <div className="py-3 px-2 bg-gray-200 flex rounded">
-            <Image src="/img/tag.svg" alt="mapIMG" width={28} height={28} />
+            <Image
+              src="/img/tag.svg"
+              alt="mapIMG"
+              width={28}
+              height={28}
+              loading="eager" //画像がチラつくため追加
+              priority //画像がチラつくため追加
+            />
             <h1 className="pl-1  text-xl font-semibold">タグ</h1>
           </div>
 
@@ -35,6 +42,8 @@ export default function Tags(props) {
                   alt="programmingIMG"
                   width={16}
                   height={16}
+                  loading="eager"
+                  priority
                 />
                 <h2 className="ml-1">プログラミング</h2>
               </div>
@@ -60,6 +69,8 @@ export default function Tags(props) {
                   alt="travelIMG"
                   width={16}
                   height={16}
+                  loading="eager"
+                  priority
                 />
                 <h2 className="ml-1">旅行</h2>
               </div>
@@ -85,6 +96,8 @@ export default function Tags(props) {
                   alt="diaryIMG"
                   width={16}
                   height={16}
+                  loading="eager"
+                  priority
                 />
                 <h2 className="ml-1">ダイアリー</h2>
               </div>

@@ -8,7 +8,7 @@ export function Top() {
           Done is better
         </p>
         <div className="pt-4 ">
-          <div className="-mb-5 pr-1">
+          <div className="-mb-5 pr-2">
             <Image
               src={`/img/catwalk.svg`}
               alt="walkCatIcon"
@@ -17,8 +17,16 @@ export function Top() {
               loading="eager" //ページ遷移時にローディング開始(プリロード)される。
               priority //"eager"は通常パフォーマンスが低下するため、priority=trueにする事で画像が適切に読み込まれる。
             />
+            {/* 👇setTimeOutで猫の画像切り替える処理を追加する？👇 */}
+            {/* <Image
+              src={`/img/catstop.svg`}
+              alt="stopCatIcon"
+              width={38}
+              height={38}
+              loading="eager"
+              priority
+            /> */}
           </div>
-          {/* 👇setTimeOutで猫の画像切り替える処理を追加する？👇 */}
           <Image
             src="/img/globe.svg"
             alt="globeIcon"
