@@ -15,11 +15,13 @@ export async function getStaticProps() {
 }
 
 export default function Blog(props) {
+  const { data } = props;
+
   return (
     <>
       <MainLayout>
         <BlogLayout>
-          <Card pass="blog" data={props.data} />
+          <Card pass="blog" data={data} />
         </BlogLayout>
       </MainLayout>
     </>
