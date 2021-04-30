@@ -1,4 +1,3 @@
-import { Footer } from "src/components/footer";
 import { Header } from "src/components/header";
 import Head from "next/head";
 import { FooterNav } from "src/components/footerNav";
