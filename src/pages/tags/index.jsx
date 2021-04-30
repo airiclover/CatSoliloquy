@@ -24,7 +24,7 @@ export default function Tags(props) {
         <div className="py-3 px-6">
           <div className="py-3 px-2 bg-gray-200 flex rounded">
             <Image src="/img/tag.svg" alt="mapIMG" width={28} height={28} />
-            <h1 className="pl-1 text-2xl">タグ</h1>
+            <h1 className="pl-1  text-xl font-semibold">タグ</h1>
           </div>
 
           <div className="py-3">
@@ -33,10 +33,10 @@ export default function Tags(props) {
                 <Image
                   src="/img/programming.svg"
                   alt="programmingIMG"
-                  width={20}
-                  height={20}
+                  width={16}
+                  height={16}
                 />
-                <h2 className="ml-1 text-lg">プログラミング</h2>
+                <h2 className="ml-1">プログラミング</h2>
               </div>
               <ul className="flex flex-wrap">
                 {lists.map((list) => (
@@ -58,10 +58,10 @@ export default function Tags(props) {
                 <Image
                   src="/img/travel.svg"
                   alt="travelIMG"
-                  width={20}
-                  height={20}
+                  width={16}
+                  height={16}
                 />
-                <h2 className="ml-1 text-lg">旅行</h2>
+                <h2 className="ml-1">旅行</h2>
               </div>
               <ul className="flex flex-wrap">
                 {lists.map((list) => (
@@ -83,10 +83,10 @@ export default function Tags(props) {
                 <Image
                   src="/img/diary.svg"
                   alt="diaryIMG"
-                  width={20}
-                  height={20}
+                  width={16}
+                  height={16}
                 />
-                <h2 className="ml-1 text-lg">ダイアリー</h2>
+                <h2 className="ml-1">ダイアリー</h2>
               </div>
               <ul className="flex flex-wrap">
                 {lists.map((list) => (

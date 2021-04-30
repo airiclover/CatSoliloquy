@@ -24,7 +24,7 @@ export default function Categories(props) {
         <div className="py-3 px-6">
           <div className="py-3 px-2 bg-gray-200 flex rounded">
             <Image src="/img/map.svg" alt="mapIMG" width={28} height={28} />
-            <h1 className="pl-1 text-2xl">カテゴリー</h1>
+            <h1 className="pl-1 text-xl font-semibold">カテゴリー</h1>
           </div>
 
           <ul>
