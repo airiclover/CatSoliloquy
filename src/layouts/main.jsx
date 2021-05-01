@@ -11,7 +11,7 @@ export function MainLayout({ children }) {
       </Head>
 
       <Header />
-      <main className="pb-14 text-gray-900">{children}</main>
+      <main className="text-gray-900 pb-14 lg:pb-0">{children}</main>
       <FooterNav />
     </>
   );

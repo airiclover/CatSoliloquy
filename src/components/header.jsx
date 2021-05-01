@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NavLinks } from "src/components/navLinks";
 
 export function Header() {
   return (
     <>
-      <div className="w-full h-14 px-6 bg-white text-gray-900 font-mono font-black">
+      <div className="w-full h-14 px-6 bg-white text-gray-900 font-mono font-black lg:h-16 lg:flex lg:justify-between">
         <Link href="/">
-          <a className="h-14 flex inline-flex items-center">
+          <a className="h-14 flex inline-flex items-center lg:h-16">
             <Image
               src="/img/catface.png"
               alt="headerIcon"
@@ -18,6 +19,10 @@ export function Header() {
             <div className="pl-2 text-lg">Cat's Soliloquy</div>
           </a>
         </Link>
+
+        <div className="invisible lg:visible lg:h-16 lg:flex lg:items-center">
+          <NavLinks />
+        </div>
       </div>
     </>
   );

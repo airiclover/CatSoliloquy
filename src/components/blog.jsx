@@ -8,18 +8,18 @@ export function Blog(props) {
   const updateYmd = updateYmdhi.slice(0, 10);
 
   return (
-    <div>
-      <main className="mb-4 mx-6 break-words">
+    <div className="sm:bg-gray-100">
+      <main className="mb-4 mx-6 bg-white break-words sm:max-w-screen-sm sm:mx-auto">
         <Image
           src={data.ext_col_01.url}
           alt={data.slug}
-          width={500}
-          height={350}
+          width={650}
+          height={460}
           objectFit="cover"
         />
-        <h1 className="text-2xl font-bold py-3 ">{data.subject}</h1>
+        <h1 className="text-2xl font-bold py-3 lg:px-3">{data.subject}</h1>
 
-        <div className="py-2 flex">
+        <div className="py-2 flex lg:px-3">
           <div className="flex items-center">
             <Image src="/img/clock.svg" alt="blogIMG" width={14} height={14} />
             <p className="text-sm pl-1 pr-3">{data.ymd.replace(/-/g, ".")}</p>
@@ -39,7 +39,7 @@ export function Blog(props) {
           ) : null}
         </div>
 
-        <div className="pb-2 text-xs text-gray-400 border-b-2">
+        <div className="pb-2 text-xs text-gray-400 border-b-2 lg:px-3">
           Category:
           <Link href={`/categories/${data.contents_type}`}>
             <a className="p-1 text-gray-900 font-medium ">
@@ -49,7 +49,7 @@ export function Blog(props) {
         </div>
 
         <div
-          className="py-6"
+          className="py-6 sm:px-6"
           dangerouslySetInnerHTML={{
             __html: `${data.contents}`,
           }}

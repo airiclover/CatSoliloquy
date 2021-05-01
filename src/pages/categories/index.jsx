@@ -21,7 +21,7 @@ export default function Categories(props) {
   return (
     <>
       <MainLayout>
-        <div className="py-3 px-6">
+        <div className="py-3 px-6 mx-auto lg:max-w-screen-md">
           <div className="py-3 px-2 bg-gray-200 flex rounded">
             <Image
               src="/img/map.svg"

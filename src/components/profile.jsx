@@ -39,7 +39,8 @@ export function Profile() {
         </div>
       </div>
 
-      <p className="mx-auto w-5/6 text-sm text-left">
+      <p className="mx-auto w-5/6 text-sm text-left sm:max-w-xs">
+        {/* <p className="mx-auto w-5/6 text-sm text-left"> */}
         フロントエンド学習者です。プログラミングの学習記録や趣味について気まぐれに書いています。
         <br />
         猫が大好き。趣味は海外旅行です。
