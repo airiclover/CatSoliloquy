@@ -41,7 +41,6 @@ export async function getStaticProps({ params }) {
 
 export default function Tag(props) {
   const data = props.data;
-  console.log(data);
 
   return (
     <>
