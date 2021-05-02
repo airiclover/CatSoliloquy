@@ -56,7 +56,7 @@ export function Blog(props) {
           </div>
 
           <div
-            className="py-6 sm:px-6"
+            className="py-10 sm:px-6"
             dangerouslySetInnerHTML={{
               __html: `${data.contents}`,
             }}
