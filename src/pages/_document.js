@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
+          <link rel="icon" href="/img/favicon.ico" />
           <meta
             name="description"
             content="「Cat's Soliloquy」猫の独り言。フロントエンド学習者による気まぐれブログです。プログラミングの学習記録や趣味について書いています。"
