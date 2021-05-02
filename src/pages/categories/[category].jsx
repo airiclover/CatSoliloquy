@@ -40,18 +40,25 @@ export async function getStaticProps({ params }) {
 
 export default function Category(props) {
   const data = props.data[0];
-  console.log(data);
 
   return (
     <>
       <Head>
-        <title>{data.category.category_nm}</title>
+        {data ? (
+          <title>{data.category.category_nm}</title>
+        ) : (
+          <title>Cat's Soliloquy</title>
+        )}
       </Head>
 
       <MainLayout>
         <BlogLayout>
           {/* 👇ページパスは「categories」ではなく、「blog」に飛ばす。 */}
-          <Card pass="blog" data={data} />
+          {data ? (
+            <Card pass="blog" data={data} />
+          ) : (
+            <div>まだ投稿がありません。</div>
+          )}
         </BlogLayout>
       </MainLayout>
     </>
