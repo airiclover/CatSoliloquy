@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Card } from "src/components/card";
 import { BlogLayout } from "src/layouts/blog";
 import { MainLayout } from "src/layouts/main";
@@ -40,13 +41,20 @@ export async function getStaticProps({ params }) {
 
 export default function Tag(props) {
   const data = props.data;
+  console.log(data);
 
   return (
-    <MainLayout>
-      <BlogLayout>
-        {/* 👇ページパスは「tags」ではなく、「blog」に飛ばす。 */}
-        <Card pass="blog" data={data} />
-      </BlogLayout>
-    </MainLayout>
+    <>
+      <Head>
+        <title>Cat's Soliloquy</title>
+      </Head>
+
+      <MainLayout>
+        <BlogLayout>
+          {/* 👇ページパスは「tags」ではなく、「blog」に飛ばす。 */}
+          <Card pass="blog" data={data} />
+        </BlogLayout>
+      </MainLayout>
+    </>
   );
 }

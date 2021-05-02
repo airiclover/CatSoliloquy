@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Card } from "src/components/card";
 import { MainLayout } from "src/layouts/main";
 import { BlogLayout } from "src/layouts/blog";
@@ -20,6 +21,10 @@ export async function getStaticProps() {
 export default function Home(props) {
   return (
     <>
+      <Head>
+        <title>Cat's Soliloquy</title>
+      </Head>
+
       <MainLayout>
         <Top />
         <BlogLayout>

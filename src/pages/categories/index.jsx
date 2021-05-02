@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { MainLayout } from "src/layouts/main";
@@ -20,6 +21,10 @@ export default function Categories(props) {
 
   return (
     <>
+      <Head>
+        <title>カテゴリー</title>
+      </Head>
+
       <MainLayout>
         <div className="py-3 px-6 mx-auto lg:max-w-screen-md">
           <div className="py-3 px-2 bg-gray-200 flex rounded">

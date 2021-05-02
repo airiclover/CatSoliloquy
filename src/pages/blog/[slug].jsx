@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Blog } from "src/components/blog";
 import { MainLayout } from "src/layouts/main";
 
@@ -39,8 +40,14 @@ export default function BlogDetail(props) {
   const data = props.data.details;
 
   return (
-    <MainLayout>
-      {data ? <Blog data={data} /> : <div>404だよ！！！</div>}
-    </MainLayout>
+    <>
+      <Head>
+        <title>{data.subject}</title>
+      </Head>
+
+      <MainLayout>
+        {data ? <Blog data={data} /> : <div>404だよ！！！</div>}
+      </MainLayout>
+    </>
   );
 }

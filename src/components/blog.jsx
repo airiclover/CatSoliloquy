@@ -19,9 +19,9 @@ export function Blog(props) {
             objectFit="cover"
             className="sm:rounded-t-lg"
           />
-          <h1 className="text-2xl font-bold py-3 lg:px-3">{data.subject}</h1>
+          <h1 className="text-2xl font-bold py-3 sm:px-3">{data.subject}</h1>
 
-          <div className="py-2 flex text-xs lg:px-3 lg:text-sm">
+          <div className="py-2 flex text-xs sm:px-3 sm:text-sm">
             <div className="flex items-center">
               <Image
                 src="/img/clock.svg"
@@ -46,7 +46,7 @@ export function Blog(props) {
             ) : null}
           </div>
 
-          <div className="pb-2 text-xs text-gray-400 border-b-2 lg:px-3 lg:text-sm">
+          <div className="pb-2 text-xs text-gray-400 border-b-2 sm:px-3 sm:text-sm">
             Category:
             <Link href={`/categories/${data.contents_type}`}>
               <a className="p-1 text-gray-900 font-medium ">
@@ -62,7 +62,7 @@ export function Blog(props) {
             }}
           />
 
-          <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2">
+          <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2 sm:px-3">
             {data.tags.map((tag) => (
               <Link href={`/tags/${tag.tag_id}`} key={tag.tag_id}>
                 <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded">

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Card } from "src/components/card";
 import { BlogLayout } from "src/layouts/blog";
 import { MainLayout } from "src/layouts/main";
@@ -39,13 +40,20 @@ export async function getStaticProps({ params }) {
 
 export default function Category(props) {
   const data = props.data[0];
+  console.log(data);
 
   return (
-    <MainLayout>
-      <BlogLayout>
-        {/* 👇ページパスは「categories」ではなく、「blog」に飛ばす。 */}
-        <Card pass="blog" data={data} />
-      </BlogLayout>
-    </MainLayout>
+    <>
+      <Head>
+        <title>{data.category.category_nm}</title>
+      </Head>
+
+      <MainLayout>
+        <BlogLayout>
+          {/* 👇ページパスは「categories」ではなく、「blog」に飛ばす。 */}
+          <Card pass="blog" data={data} />
+        </BlogLayout>
+      </MainLayout>
+    </>
   );
 }

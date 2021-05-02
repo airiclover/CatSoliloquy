@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Card } from "src/components/card";
 import { BlogLayout } from "src/layouts/blog";
 import { MainLayout } from "src/layouts/main";
@@ -19,6 +20,10 @@ export default function Blog(props) {
 
   return (
     <>
+      <Head>
+        <title>Cat's Soliloquy</title>
+      </Head>
+
       <MainLayout>
         <BlogLayout>
           <Card pass="blog" data={data} />
