@@ -18,7 +18,7 @@ export function Card(props) {
               objectFit="cover"
             />
             <div className="h-24 max-h-24">
-              <div className="text-xs text-gray-600 py-2 flex items-center text-sm">
+              <div className="text-xs text-gray-600 py-2 flex items-center sm:text-sm">
                 <p>{data.ymd.replace(/-/g, ".")}</p>
                 <p className="mx-1">|</p>
                 <p className="line-clamp-1 break-words">
