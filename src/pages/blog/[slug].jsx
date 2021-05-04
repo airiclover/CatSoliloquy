@@ -48,8 +48,8 @@ export default function BlogDetail(props) {
           property="og:url"
           content={`https://cat-soliloquy.vercel.app/blog/${data.slug}`}
         />
-        <meta property="og:title" content="Cat's Soliloquy" />
-        <meta property="og:description" content={data.subject} />
+        <meta property="og:title" content={data.subject} />
+        <meta property="og:description" content="Cat's Soliloquy" />
         <meta property="og:image" content={data.ext_col_01.url} />
       </Head>
 
