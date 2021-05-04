@@ -43,6 +43,14 @@ export default function BlogDetail(props) {
     <>
       <Head>
         <title>{data.subject}</title>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:url"
+          content={`https://cat-soliloquy.vercel.app/blog/${data.slug}`}
+        />
+        <meta property="og:title" content="Cat's Soliloquy" />
+        <meta property="og:description" content={data.subject} />
+        <meta property="og:image" content={data.ext_col_01.url} />
       </Head>
 
       <MainLayout>
