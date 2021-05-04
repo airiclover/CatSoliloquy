@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SnsShare } from "src/components/snsShare";
 
 export function Blog(props) {
   const data = props.data;
@@ -61,6 +62,10 @@ export function Blog(props) {
               __html: `${data.contents}`,
             }}
           />
+
+          <div className="pb-3">
+            <SnsShare url={data.slug} title={data.subject} />
+          </div>
 
           <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2 sm:px-3">
             {data.tags.map((tag) => (
