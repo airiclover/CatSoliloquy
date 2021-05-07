@@ -5,7 +5,9 @@ export function MainLayout({ children }) {
   return (
     <>
       <Header />
-      <main className="text-gray-900 pb-14 lg:pb-0">{children}</main>
+      <main className="text-gray-900 pb-14 lg:pb-0 dark:text-white">
+        {children}
+      </main>
       <FooterNav />
     </>
   );

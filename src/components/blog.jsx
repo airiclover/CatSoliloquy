@@ -9,9 +9,9 @@ export function Blog(props) {
   const updateYmd = updateYmdhi.slice(0, 10);
 
   return (
-    <div className="sm:bg-gray-100">
-      <div className="sm:py-6">
-        <main className="pb-4 mx-6 bg-white break-words sm:max-w-screen-sm sm:mx-auto sm:rounded-lg">
+    <div className="sm:bg-gray-100 sm:dark:bg-gray-600">
+      <div className=" sm:py-6">
+        <main className="pb-4 mx-6 bg-white break-words sm:max-w-screen-sm sm:mx-auto sm:rounded-lg dark:bg-gray-700">
           <Image
             src={data.ext_col_01.url}
             alt={data.slug}
@@ -47,10 +47,10 @@ export function Blog(props) {
             ) : null}
           </div>
 
-          <div className="pb-2 text-xs text-gray-400 border-b-2 sm:px-3 sm:text-sm">
+          <div className="pb-2 text-xs text-gray-400 border-b-2 sm:px-3 sm:text-sm dark:border-gray-500">
             Category:
             <Link href={`/categories/${data.contents_type}`}>
-              <a className="p-1 text-gray-900 font-medium ">
+              <a className="p-1 text-gray-900 font-medium  dark:text-gray-300">
                 {data.contents_type_nm}
               </a>
             </Link>
@@ -67,10 +67,10 @@ export function Blog(props) {
             <SnsShare url={data.slug} title={data.subject} />
           </div>
 
-          <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2 sm:px-3">
+          <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2 sm:px-3 dark:border-gray-500">
             {data.tags.map((tag) => (
               <Link href={`/tags/${tag.tag_id}`} key={tag.tag_id}>
-                <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded">
+                <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded  dark:bg-gray-500">
                   {tag.tag_nm}
                 </a>
               </Link>

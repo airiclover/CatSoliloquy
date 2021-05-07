@@ -7,7 +7,7 @@ const SNSES = [
 
 export function Profile() {
   return (
-    <div className="py-10 px-6 bg-gray-200 text-center">
+    <div className="py-10 px-6 bg-gray-200 text-center dark:bg-gray-500">
       <Image
         src="/img/clover.jpeg"
         alt="blogIMG"

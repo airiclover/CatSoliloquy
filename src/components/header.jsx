@@ -5,7 +5,7 @@ import { NavLinks } from "src/components/navLinks";
 export function Header() {
   return (
     <>
-      <div className="w-full h-14 px-6 bg-white text-gray-900 font-mono font-black lg:h-16 lg:flex lg:justify-between">
+      <div className="w-full h-14 px-6 bg-white text-gray-900 font-mono font-black lg:h-16 lg:flex lg:justify-between dark:bg-gray-700 dark:text-white">
         <Link href="/">
           <a className="h-14 flex inline-flex items-center lg:h-16">
             <Image

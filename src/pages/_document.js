@@ -16,7 +16,7 @@ class MyDocument extends Document {
             content="「Cat's Soliloquy」猫の独り言。フロントエンド学習者による気まぐれブログです。プログラミングの学習記録や趣味について書いています。"
           />
         </Head>
-        <body>
+        <body className="dark:bg-gray-700">
           <Main />
           <NextScript />
         </body>

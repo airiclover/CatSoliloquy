@@ -11,7 +11,7 @@ export async function getStaticProps() {
     props: {
       data,
     },
-    revalidate: 60,
+    revalidate: 60 * 60,
   };
 }
 
@@ -27,7 +27,7 @@ export default function Categories(props) {
 
       <MainLayout>
         <div className="py-3 px-6 mx-auto lg:max-w-screen-md">
-          <div className="py-3 px-2 bg-gray-200 flex rounded">
+          <div className="py-3 px-2 bg-gray-200 flex rounded dark:bg-gray-500">
             <Image
               src="/img/map.svg"
               alt="mapIMG"
@@ -43,7 +43,7 @@ export default function Categories(props) {
             {lists.map((list) => (
               <li
                 key={list.topics_category_id}
-                className="flex items-center border-b-2"
+                className="flex items-center border-b-2 dark:border-gray-500"
               >
                 <Link href={`/categories/${list.contents_type}`}>
                   <a className="w-full py-5 px-4 flex">

@@ -11,7 +11,7 @@ export async function getStaticProps() {
     props: {
       data,
     },
-    revalidate: 60,
+    revalidate: 60 * 60,
   };
 }
 
@@ -26,8 +26,8 @@ export default function Tags(props) {
       </Head>
 
       <MainLayout>
-        <div className="py-3 px-6 mx-auto lg:max-w-screen-md">
-          <div className="py-3 px-2 bg-gray-200 flex rounded">
+        <div className="min-h-full py-3 px-6 mx-auto lg:max-w-screen-md">
+          <div className="py-3 px-2 bg-gray-200 flex rounded dark:bg-gray-500">
             <Image
               src="/img/tag.svg"
               alt="mapIMG"
@@ -36,11 +36,11 @@ export default function Tags(props) {
               loading="eager" //画像がチラつくため追加
               priority //画像がチラつくため追加
             />
-            <h1 className="pl-1  text-xl font-semibold">タグ</h1>
+            <h1 className="pl-1 text-xl font-semibold">タグ</h1>
           </div>
 
           <div className="py-3">
-            <div className="py-3 px-2 border-b-2">
+            <div className="py-3 px-2 border-b-2 dark:border-gray-500">
               <div className="flex items-center mb-1">
                 <Image
                   src="/img/programming.svg"
@@ -57,7 +57,7 @@ export default function Tags(props) {
                   <li key={list.tag_id}>
                     {list.tag_category_id === 5 && (
                       <Link href={`/tags/${list.tag_id}`}>
-                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block">
+                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block dark:bg-gray-500">
                           {list.tag_nm}
                         </a>
                       </Link>
@@ -67,7 +67,7 @@ export default function Tags(props) {
               </ul>
             </div>
 
-            <div className="py-3 px-2 border-b-2">
+            <div className="py-3 px-2 border-b-2 dark:border-gray-500">
               <div className="flex items-center mb-1">
                 <Image
                   src="/img/travel.svg"
@@ -84,7 +84,7 @@ export default function Tags(props) {
                   <li key={list.tag_id}>
                     {list.tag_category_id === 6 && (
                       <Link href={`/tags/${list.tag_id}`}>
-                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block">
+                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block dark:bg-gray-500">
                           {list.tag_nm}
                         </a>
                       </Link>
@@ -94,7 +94,7 @@ export default function Tags(props) {
               </ul>
             </div>
 
-            <div className="py-3 px-2 border-b-2">
+            <div className="py-3 px-2 border-b-2 dark:border-gray-500">
               <div className="flex items-center mb-1">
                 <Image
                   src="/img/diary.svg"
@@ -111,7 +111,7 @@ export default function Tags(props) {
                   <li key={list.tag_id}>
                     {list.tag_category_id === 7 && (
                       <Link href={`/tags/${list.tag_id}`}>
-                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block">
+                        <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block dark:bg-gray-500">
                           {list.tag_nm}
                         </a>
                       </Link>
