@@ -15,6 +15,7 @@ export function SnsShare(props) {
           <TwitterShareButton
             url={`https://cat-soliloquy.vercel.app/blog/${url}`}
             title={title}
+            className="focus:outline-none"
           >
             <TwitterIcon size={32} round />
           </TwitterShareButton>
@@ -22,6 +23,7 @@ export function SnsShare(props) {
         <li className="px-2 sm:hover:opacity-75">
           <FacebookShareButton
             url={`https://cat-soliloquy.vercel.app/blog/${url}`}
+            className="focus:outline-none"
           >
             <FacebookIcon size={32} round />
           </FacebookShareButton>
