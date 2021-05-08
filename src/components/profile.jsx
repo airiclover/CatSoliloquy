@@ -1,13 +1,26 @@
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const SNSES = [
-  { href: "https://twitter.com/cloverlovexxx", src: "twitter.svg" },
-  { href: "https://github.com/airiclover", src: "github.svg" },
+  {
+    name: "twitter",
+    href: "https://twitter.com/cloverlovexxx",
+    src: "twitter.svg",
+    darksrc: "twitterWhite.svg",
+  },
+  {
+    name: "github",
+    href: "https://github.com/airiclover",
+    src: "github.svg",
+    darksrc: "githubWhite.svg",
+  },
 ];
 
 export function Profile() {
+  const { theme } = useTheme();
+
   return (
-    <div className="py-10 px-6 bg-gray-200 text-center">
+    <div className="py-10 px-6 bg-gray-200 text-center dark:bg-gray-500">
       <Image
         src="/img/clover.jpeg"
         alt="blogIMG"
@@ -22,14 +35,16 @@ export function Profile() {
         <div>
           {SNSES.map((sns) => (
             <a
+              key={sns.name}
               href={sns.href}
-              key={sns.src}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block p-1"
             >
               <Image
-                src={`/img/${sns.src}`}
+                src={
+                  theme === "light" ? `/img/${sns.src}` : `/img/${sns.darksrc}`
+                }
                 alt={sns.src}
                 width={28}
                 height={28}
@@ -40,7 +55,6 @@ export function Profile() {
       </div>
 
       <p className="mx-auto w-5/6 text-sm text-left sm:max-w-xs">
-        {/* <p className="mx-auto w-5/6 text-sm text-left"> */}
         フロントエンド学習者です。プログラミングの学習記録や趣味について気まぐれに書いています。
         <br />
         猫が大好き。趣味は海外旅行です。
