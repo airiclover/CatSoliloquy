@@ -43,10 +43,18 @@ export default function BlogDetail(props) {
     <>
       <Head>
         <title>{data.subject}</title>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:url"
+          content={`https://cat-soliloquy.vercel.app/blog/${data.slug}`}
+        />
+        <meta property="og:title" content={data.subject} />
+        <meta property="og:description" content="Cat's Soliloquy" />
+        <meta property="og:image" content={data.ext_col_01.url} />
       </Head>
 
       <MainLayout>
-        {data ? <Blog data={data} /> : <div>404だよ！！！</div>}
+        {data ? <Blog data={data} /> : <div>ページが存在しません、</div>}
       </MainLayout>
     </>
   );
