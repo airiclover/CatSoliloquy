@@ -87,7 +87,7 @@ export function NavLinks() {
   return (
     <>
       {LINKS.map((link, index) => (
-        <Link href={link.href} key={index}>
+        <Link href={link.href} key={index} prefetch={false}>
           <a className="w-1/4 text-center lg:w-24 lg:text-xs">
             {link.src}
             <p>{link.title}</p>

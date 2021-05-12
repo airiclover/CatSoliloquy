@@ -51,7 +51,10 @@ export default function Categories(props) {
                 key={list.topics_category_id}
                 className="flex items-center border-b-2 dark:border-gray-500"
               >
-                <Link href={`/categories/${list.contents_type}`}>
+                <Link
+                  href={`/categories/${list.contents_type}`}
+                  prefetch={false}
+                >
                   <a className="w-full py-5 px-4 flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

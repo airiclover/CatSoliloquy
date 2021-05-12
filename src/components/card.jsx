@@ -8,7 +8,7 @@ export function Card(props) {
   return (
     <>
       {datas.map((data, index) => (
-        <Link href={`/${pass}/${data.slug}`} key={index}>
+        <Link href={`/${pass}/${data.slug}`} key={index} prefetch={false}>
           <a className="sm:mx-auto sm:max-w-xs">
             <Image
               src={data.ext_col_01.url}

@@ -67,7 +67,7 @@ export function Blog(props) {
 
           <div className="pb-2 text-xs text-gray-400 border-b-2 sm:px-3 sm:text-sm dark:border-gray-500">
             Category:
-            <Link href={`/categories/${data.contents_type}`}>
+            <Link href={`/categories/${data.contents_type}`} prefetch={false}>
               <a className="p-1 text-gray-900 font-medium  dark:text-gray-300">
                 {data.contents_type_nm}
               </a>
@@ -87,7 +87,11 @@ export function Blog(props) {
 
           <div className="py-3 flex flex-wrap text-xs text-sm border-t-2 border-b-2 sm:px-3 dark:border-gray-500">
             {data.tags.map((tag) => (
-              <Link href={`/tags/${tag.tag_id}`} key={tag.tag_id}>
+              <Link
+                href={`/tags/${tag.tag_id}`}
+                key={tag.tag_id}
+                prefetch={false}
+              >
                 <a className="m-1 py-1 px-2 bg-gray-800 text-white rounded  dark:bg-gray-500">
                   {tag.tag_nm}
                 </a>
