@@ -67,7 +67,7 @@ export default function Tags(props) {
                 {lists.map((list) => (
                   <li key={list.tag_id}>
                     {list.tag_category_id === 5 && (
-                      <Link href={`/tags/${list.tag_id}`} prefetch={false}>
+                      <Link href={`/tags/${list.tag_id}`}>
                         <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block dark:bg-gray-500">
                           {list.tag_nm}
                         </a>
@@ -133,7 +133,7 @@ export default function Tags(props) {
                 {lists.map((list) => (
                   <li key={list.tag_id}>
                     {list.tag_category_id === 7 && (
-                      <Link href={`/tags/${list.tag_id}`} prefetch={false}>
+                      <Link href={`/tags/${list.tag_id}`}>
                         <a className="m-1 py-1 px-2 bg-gray-800 text-xs text-white rounded inline-block dark:bg-gray-500">
                           {list.tag_nm}
                         </a>
